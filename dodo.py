@@ -32,6 +32,7 @@ def task_styles():
 # uptodate
 class config_changed_or_missing(object):
     """check if passed config was modified or the object is missing
+    	stolen and modified from doit source.
     @var config (str) or (dict)
     @var check_path (str)
     """
