@@ -23,9 +23,13 @@ def task_init():
 	return { 'actions':None, 'task_dep':['_jquery', '_bootstrap'] }
 
 def task_styles():
+	def check_lessfiles(directory):
+		return [os.path.join(directory,f) 
+				for f in os.listdir(directory) 
+				if f.endswith('.less')]
 	return {
 		'actions' : ['./lessc styles/main.less styles/main.css'],
-		'file_dep': ['styles/bootstrap/less/bootstrap.less']
+		'file_dep': ['styles/bootstrap/less/bootstrap.less'] + check_lessfiles('styles')
 	}
 
 
