@@ -1,26 +1,32 @@
 //
 // Reset CSS
-// From Bootstrap (http://github.com/twitter/bootstrap/blob/master/less/reset.less)
-// Adapted from http://github.com/necolas/normalize.css
+// Adapted from https://github.com/mgeraci/Less-Boilerplate/blob/master/boilerplate.less
+// And http://github.com/twitter/bootstrap/blob/master/less/reset.less
+// And http://github.com/necolas/normalize.css
 // --------------------------------------------------
 
+// ============= //
+// = CSS Reset = //
+// ============= //
 
-// Display in IE6-9 and FF3
-// -------------------------
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section {
-  display: block;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
 }
 
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{
+	display: block;
+}
+	
 // Display block in IE6-9 and FF3
 // -------------------------
 
@@ -43,7 +49,6 @@ audio:not([controls]) {
 // -------------------------
 
 html {
-  font-size: 100%;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -91,59 +96,7 @@ img {
 // Prevent max-width from affecting Google Maps
 #map_canvas img,
 .google-maps img {
-  max-width: none;
-}
-
-// Forms
-// -------------------------
-
-// Font size in all browsers, margin changes, misc consistency
-button,
-input,
-select,
-textarea {
-  margin: 0;
-  font-size: 100%;
-  vertical-align: middle;
-}
-button,
-input {
-  *overflow: visible; // Inner spacing ie IE6/7
-  line-height: normal; // FF3/4 have !important on line-height in UA stylesheet
-}
-button::-moz-focus-inner,
-input::-moz-focus-inner { // Inner padding and border oddities in FF3/4
-  padding: 0;
-  border: 0;
-}
-button,
-html input[type="button"], // Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls.
-input[type="reset"],
-input[type="submit"] {
-    -webkit-appearance: button; // Corrects inability to style clickable `input` types in iOS.
-    cursor: pointer; // Improves usability and consistency of cursor style between image-type `input` and others.
-}
-label,
-select,
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-input[type="radio"],
-input[type="checkbox"] {
-    cursor: pointer; // Improves usability and consistency of cursor style between image-type `input` and others.
-}
-input[type="search"] { // Appearance in Safari/Chrome
-  .box-sizing(content-box);
-  -webkit-appearance: textfield;
-}
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none; // Inner-padding issues in Chrome OSX, Safari 5
-}
-textarea {
-  overflow: auto; // Remove vertical scrollbar in IE6-9
-  vertical-align: top; // Readability and alignment cross-browser
+	max-width: none;
 }
 
 
