@@ -1,7 +1,7 @@
 import os
+from doit.tools import config_changed
 
 DOIT_CONFIG = { 'default_tasks': ['styles'] }
-BOOTSTRAP_VERSION = '2.3.1' #omit the leading 'v'
 JQUERY_VERSION = '1.9.1'
 
 def task__jquery():
@@ -10,17 +10,8 @@ def task__jquery():
 		'uptodate' : [config_changed_or_missing(JQUERY_VERSION, 'js/jquery-%s.min.js' % JQUERY_VERSION)]
 	}
 
-def task__bootstrap():
-	return {
-		'actions' : [
-			'git clone git://github.com/twitter/bootstrap.git styles/bootstrap/',
-			'cd styles/bootstrap && git checkout v%s && cd ../..' % BOOTSTRAP_VERSION
-		],
-		'uptodate' : [config_changed_or_missing(BOOTSTRAP_VERSION, 'styles/bootstrap/')]
-	}
-
 def task_init():
-	return { 'actions':None, 'task_dep':['_jquery', '_bootstrap'] }
+	return { 'actions':None, 'task_dep':['_jquery'] }
 
 def task_styles():
 	def check_lessfiles(directory):
@@ -29,7 +20,7 @@ def task_styles():
 				if f.endswith('.less')]
 	return {
 		'actions' : ['./lessc styles/main.less styles/main.css'],
-		'file_dep': ['styles/bootstrap/less/bootstrap.less'] + check_lessfiles('styles')
+		'file_dep': check_lessfiles('styles')
 	}
 
 
