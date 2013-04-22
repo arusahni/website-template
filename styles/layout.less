@@ -33,4 +33,8 @@ section {
 .page-content {
     min-height: 100%;
     margin-left: @sidebarWidth + @sidebarPadding;
+    padding: @baseLineHeight * 2 0 @baseLineHeight * 2.5 @baseLineHeight * 1.75;
+    &>.content {
+        max-width: 35em;
+    }
 }
