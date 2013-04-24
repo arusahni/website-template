@@ -28,8 +28,11 @@ section {
     ul {
         position: fixed;
         bottom: 0;
+        display: table;
+        width: @sidebarWidth;
         li {
-            display: inline-block;
+            display: table-cell;
+            text-align: center;
             [class^="icon-"] {
                 color: @white;
                 .transition(opacity 0.5s);
