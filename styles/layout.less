@@ -24,12 +24,22 @@ section {
     bottom:0;
     left:0;
     right:0;
-    //-- end sidebar
+    //-- end sidebar sizing
     ul {
         position: fixed;
         bottom: 0;
-        [class^="icon-"] {
-            color: @white;
+        li {
+            display: inline-block;
+            [class^="icon-"] {
+                color: @white;
+                .transition(opacity 0.5s);
+                .opacity(60);
+                .icon-3x;
+                &:hover {
+                    .opacity(90);
+                    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+                }
+            }
         }
     }
 }
