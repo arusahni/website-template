@@ -1,7 +1,14 @@
 // Layout
 //-----------
-@sidebarWidth: 350px;
+@contentWidth: 525px;
+@contentPadding: @baseLineHeight * 1.75;
+@contentNarrowPadding: @baseLineHeight;
+
 @sidebarPadding: 10px;
+@sidebarNarrowPadding: 4px;
+
+@sidebarWidth: 350px;
+@sidebarNarrowWidth: 768px - @contentWidth - @sidebarNarrowPadding - @contentNarrowPadding;
 
 // Colors
 //-----------

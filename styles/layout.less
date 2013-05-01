@@ -15,7 +15,6 @@ section {
 
 .social {
     float: left;
-    width: @sidebarWidth;
     min-height: 100%;
     background: @sidebarBackground;
     //-- needed for full sidebar height
@@ -29,7 +28,6 @@ section {
         position: fixed;
         bottom: 0;
         display: table;
-        width: @sidebarWidth;
         li {
             display: table-cell;
             text-align: center;
@@ -49,9 +47,45 @@ section {
 
 .page-content {
     min-height: 100%;
-    margin-left: @sidebarWidth + @sidebarPadding;
-    padding: @baseLineHeight * 2 0 @baseLineHeight * 2.5 @baseLineHeight * 1.75;
+    padding: @baseLineHeight * 2 0 @baseLineHeight * 2.5 @contentPadding;
     &>.content {
-        max-width: 35em;
+        width: @contentWidth;
+    }
+}
+
+@media (min-width: 940px) {
+    .social {
+        width: @sidebarWidth;
+        ul {
+             width: @sidebarWidth;
+        }
+    }
+    .page-content {
+        margin-left: @sidebarWidth + @sidebarPadding;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 939px) {
+    .social {
+        width: @sidebarNarrowWidth;
+        ul {
+            width: @sidebarNarrowWidth;
+        }
+    }
+
+    .page-content {
+        margin-left: @sidebarNarrowWidth + @sidebarNarrowPadding;
+        padding-left: @contentNarrowPadding;
+    }
+}
+
+@media (max-width: 767px) {
+    .social {
+        position: relative;
+        width: 100%;
+        ul {
+            position: relative;
+            width: inherit;
+        }
     }
 }
