@@ -22,27 +22,25 @@ a {
 		color: @socialLinkColor;
 		line-height: @baseLineHeight * 1.75;
 		.transition(text-shadow 0.5s);
+		.opacity(60);
+        @media @mobile {
+        	.opacity(90);
+        }
 		&:hover,
 		&:focus {
             text-shadow: 0 0 10px rgba(255,255,255,0.8);
 			color: @socialLinkColor;
 			text-decoration: none;
+			.opacity(90);
+            @media @mobile {
+            	.opacity(100);
+            }
 		}
 	    [class^="icon-"] {
 	        .transition(opacity 0.5s);
-	        .opacity(60);
-	        @media @mobile {
-	        	.opacity(100);
-	        }
 	        .icon-3x;
 	        @media @mobile {
 	        	.icon-2x;
-	        }
-	        &:hover {
-	            .opacity(90);
-	            @media @mobile {
-	            	.opacity(100);
-	            }
 	        }
 	    }
 		.label {
@@ -56,6 +54,7 @@ a {
 .page-content {
 	font-family: @baseFontFamily;
 	&>.content {
+		text-rendering: optimizeLegibility;
 		h1, h2, h3, h4, h5, h6 {
 			margin: (@baseLineHeight / 2) 0;
 			font-family: @headingsFontFamily;
