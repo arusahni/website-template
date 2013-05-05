@@ -41,6 +41,9 @@ section {
         }
         bottom: 0;
         display: table;
+        @media @mobile {
+            display: block;
+        }
         width: @sidebarWidth;
         @media @tablet {
             width: @sidebarNarrowWidth;
@@ -51,14 +54,18 @@ section {
         li {
             display: table-cell;
             text-align: center;
-            [class^="icon-"] {
-                color: @white;
-                .transition(opacity 0.5s);
-                .opacity(60);
-                .icon-3x;
-                &:hover {
-                    .opacity(90);
-                    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+            @media @mobile {
+                display: block;
+                text-align: left;
+            }
+            a {
+                display: block;
+                .label {
+                    display: none;
+                    @media @mobile {
+                        display: inline;
+                        padding-left: 0.5em;
+                    }
                 }
             }
         }

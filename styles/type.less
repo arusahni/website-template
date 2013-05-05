@@ -7,6 +7,52 @@ body {
 	color: @textColor;
 }
 
+a {
+	color: @linkColor;
+	text-decoration: none;
+	&:hover,
+	&:focus {
+		color: @linkColorHover;
+		text-decoration: underline;
+	}
+}
+
+.social {
+	a {
+		color: @socialLinkColor;
+		line-height: @baseLineHeight * 1.75;
+		.transition(text-shadow 0.5s);
+		&:hover,
+		&:focus {
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+			color: @socialLinkColor;
+			text-decoration: none;
+		}
+	    [class^="icon-"] {
+	        .transition(opacity 0.5s);
+	        .opacity(60);
+	        @media @mobile {
+	        	.opacity(100);
+	        }
+	        .icon-3x;
+	        @media @mobile {
+	        	.icon-2x;
+	        }
+	        &:hover {
+	            .opacity(90);
+	            @media @mobile {
+	            	.opacity(100);
+	            }
+	        }
+	    }
+		.label {
+			font-family: @altFontFamily;
+			font-weight: @headingsFontWeight;
+			font-size: @baseFontSize * 1.75;
+		}
+	}
+}
+
 .page-content {
 	font-family: @baseFontFamily;
 	&>.content {
@@ -44,17 +90,5 @@ body {
 			.hyphens();
 			margin: 0 0 @baseLineHeight / 2;
 		}
-	}
-}
-
-a {
-	color: @linkColor;
-	text-decoration: none;
-}
-a:hover,
-a:focus {
-	:not([class^="icon-"]) {
-		color: @linkColorHover;
-		text-decoration: underline;
 	}
 }
