@@ -2,12 +2,12 @@ import os
 from doit.tools import config_changed
 
 DOIT_CONFIG = { 'default_tasks': ['styles'] }
-JQUERY_VERSION = '1.9.1'
+JQUERY_VERSION = '1.10.2'
 
 def task__jquery():
 	return {
-		'actions' : ['wget -P js http://code.jquery.com/jquery-%s.min.js' % JQUERY_VERSION],
-		'uptodate' : [config_changed_or_missing(JQUERY_VERSION, 'js/jquery-%s.min.js' % JQUERY_VERSION)]
+		'actions' : ['wget -P assets/js http://code.jquery.com/jquery-%s.min.js' % JQUERY_VERSION],
+		'uptodate' : [config_changed_or_missing(JQUERY_VERSION, 'assets/js/jquery-%s.min.js' % JQUERY_VERSION)]
 	}
 
 def task_init():
@@ -19,8 +19,8 @@ def task_styles():
 				for f in os.listdir(directory) 
 				if f.endswith('.less')]
 	return {
-		'actions' : ['./lessc styles/main.less styles/main.css'],
-		'file_dep': check_lessfiles('styles')
+		'actions' : ['./lessc assets/styles/less/main.less assets/styles/main.css'],
+		'file_dep': check_lessfiles('assets/styles/less')
 	}
 
 

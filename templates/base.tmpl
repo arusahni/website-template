@@ -1,0 +1,26 @@
+## -*- coding: utf-8 -*-
+<%namespace file="base_helper.tmpl" import="*"/>
+${set_locale(lang)}
+<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+    ${html_head()}
+    <%block name="extra_head">
+    </%block>
+    ${extra_head_data}
+</head>
+<body>
+    <section class="page-content">
+        <div class="content" rel="main">
+             <%block name="content"></%block>
+        </div>
+    </section>
+    <section class="social">
+        <ul>
+            <li><a href="https://twitter.com/IAmAru" title="Twitter"><i class="icon-twitter"></i><span class="label">twitter</span></a></li>
+            <li><a href="https://github.com/arusahni" title="Github"><i class="icon-github"></i><span class="label">github</span></a></li>
+            <li><a href="https://plus.google.com/106780152352450272697" title="Google+"><i class="icon-google-plus"></i><span class="label">google+</span></a></li>
+        </ul>
+    </section>
+</body>
+</html>
