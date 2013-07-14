@@ -1714,3 +1714,10 @@ a:focus {
 .page-content > .content em {
   font-style: italic;
 }
+.page-content > .content b,
+.page-content > .content strong {
+  font-weight: bold;
+}
+.page-content > .content cite {
+  font-style: normal;
+}
