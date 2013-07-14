@@ -52,14 +52,31 @@
 @headingsFontWeight: bold; // instead of browser default, bold
 @headingsColor: darken(@textColor, 2.0%); // empty to use BS default, @textColor
 
-@fontSizeLarge: @baseFontSize * 1.25; // ~18px
-@fontSizeSmall: @baseFontSize * 0.85; // ~12px
-@fontSizeMini: @baseFontSize * 0.75; // ~11px
-
 @linkColor: #08c;
 @linkColorHover: darken(@linkColor, 15%);
 
 @socialLinkColor: @white;
+
+// Component sizing
+// ----------
+@fontSizeLarge: @baseFontSize * 1.25; // ~18px
+@fontSizeSmall: @baseFontSize * 0.85; // ~12px
+@fontSizeMini: @baseFontSize * 0.75; // ~11px
+
+@paddingLarge: 11px 19px; // 44px
+@paddingSmall: 2px 10px; // 26px
+@paddingMini: 0 6px; // 22px
+
+@baseBorderRadius: 4px;
+@borderRadiusLarge: 6px;
+@borderRadiusSmall: 3px;
+
+// Pagination
+// -------------------------
+@paginationBackground: #fff;
+@paginationBorder: #ddd;
+@paginationActiveBackground: #f5f5f5;
+
 // Responsive
 // ----------
 @desktop: ~"(min-width: 940px)";
