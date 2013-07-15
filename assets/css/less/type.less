@@ -23,7 +23,7 @@ a {
 		line-height: @baseLineHeight * 1.85;
 		.transition(text-shadow 0.5s);
 		.opacity(60);
-        @media @mobile {
+        @media @mobileLayout {
         	.opacity(90);
         }
 		&:hover,
@@ -32,14 +32,14 @@ a {
 			color: @socialLinkColor;
 			text-decoration: none;
 			.opacity(90);
-            @media @mobile {
+            @media @mobileLayout {
             	.opacity(100);
             }
 		}
 	    [class^="icon-"] {
 	        .transition(opacity 0.5s);
 	        .icon-3x;
-	        @media @mobile {
+	        @media @mobileLayout {
 	        	.icon-2x;
 	        }
 	    }

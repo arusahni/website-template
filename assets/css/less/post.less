@@ -1,0 +1,48 @@
+.post {
+	h1.title {
+		margin: @baseLineHeight/4 0;
+	}
+
+	.meta {
+		.clearfix;
+		color: @grayLight;
+		margin-bottom: @baseLineHeight/2;
+
+		.authordate {
+			display: block;
+			.transition(color .1s linear);
+
+			&:before {
+				.icon(@time);
+			}
+
+			&:hover {
+				color: @textColor;
+			}
+		}
+
+		.tags {
+			display: block;
+			.opacity(@dimmedOpacity);
+			.transition(opacity .1s linear);
+			
+			&:hover {
+				.opacity(@opaqueOpacity);
+			}
+
+			ul {
+				margin: 0;
+				list-style: none;
+				> li {
+				  display: inline-block;
+				  .ie7-inline-block();
+				  margin-right: 10px;
+				}
+			}
+		}
+	}
+
+	.body {
+		margin-bottom: @baseLineHeight * 1.5;
+	}
+}

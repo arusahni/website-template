@@ -19,7 +19,7 @@ section {
     background: @sidebarBackground;
     //-- needed for full sidebar height
     position: absolute;
-    @media @mobile {
+    @media @mobileLayout {
         position: relative;
     }
     top:0;
@@ -27,35 +27,36 @@ section {
     left:0;
     right:0;
     width: @sidebarWidth;
-    @media @tablet {
+    @media @tabletLayout {
         width: @sidebarNarrowWidth;
     }
-    @media @mobile {
+    @media @mobileLayout {
         width: 100%;
     }
     //-- end sidebar sizing
     ul {
         position: fixed;
-        @media @mobile {
+        @media @mobileLayout {
             position: relative;
         }
+        margin: 0;
         bottom: 0;
         display: table;
-        @media @mobile {
+        @media @mobileLayout {
             display: block;
         }
         width: @sidebarWidth;
-        @media @tablet {
+        @media @tabletLayout {
             width: @sidebarNarrowWidth;
         }
-        @media @mobile {
+        @media @mobileLayout {
             width: inherit;
         }
 
         li {
             display: table-cell;
             text-align: center;
-            @media @mobile {
+            @media @mobileLayout {
                 padding-left: 25%;
                 display: block;
                 text-align: left;
@@ -66,7 +67,7 @@ section {
 
                 .label {
                     display: none;
-                    @media @mobile {
+                    @media @mobileLayout {
                         display: inline;
                         padding-left: 0.5em;
                     }
@@ -80,19 +81,19 @@ section {
     min-height: 100%;
     padding: @baseLineHeight * 2 0 @baseLineHeight * 2.5 @contentPadding;
     margin-left: @sidebarWidth + @sidebarPadding;
-    @media @tablet {
+    @media @tabletLayout {
         padding-left: @contentNarrowPadding;
         margin-left: @sidebarNarrowWidth + @sidebarNarrowPadding;
     }
-    @media @mobile {
+    @media @mobileLayout {
         margin-left: 0;
         width: 100%;
         padding: @baseLineHeight * 1.5 0;
     }
-    
+
     &>.content {
         width: @contentWidth;
-        @media @mobile {
+        @media @mobileLayout {
             width: auto;
             padding-left: 4px;
             padding-right: 4px;
