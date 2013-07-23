@@ -1,0 +1,51 @@
+.post-title() {
+	margin: @baseLineHeight/4 0;
+	a {
+		color: inherit;
+
+		&:hover,
+		&:focus {
+			color: inherit;
+		}
+	}
+}
+
+.post-metadata() {
+	.clearfix;
+	color: @grayLight;
+	margin-bottom: @baseLineHeight/2;
+	margin-top: @baseLineHeight/4 * -1;
+
+	.authordate {
+		display: block;
+		.transition(color .1s linear);
+
+		&:before {
+			.icon(@time);
+		}
+
+		&:hover {
+			color: @textColor;
+		}
+	}
+
+	.tags {
+		display: block;
+		.opacity(@dimmedOpacity);
+		.transition(opacity .1s linear);
+		
+		&:hover {
+			.opacity(@opaqueOpacity);
+		}
+
+		ul {
+			margin: 0;
+			list-style: none;
+			> li {
+			  display: inline-block;
+			  .ie7-inline-block();
+			  margin-right: 10px;
+			}
+		}
+	}
+}

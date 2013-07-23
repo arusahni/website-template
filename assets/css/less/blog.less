@@ -1,0 +1,17 @@
+.post {
+	h1.title {
+		.post-title();
+	}
+
+	.meta {
+		.post-metadata();
+	}
+
+	.body {
+		margin-bottom: @baseLineHeight * 1.5;
+	}
+
+	&+ .post {
+		margin-top: @baseLineHeight * 2;
+	}
+}

@@ -2236,10 +2236,18 @@ a:focus {
 .post h1.title {
   margin: 6px 0;
 }
+.post h1.title a {
+  color: inherit;
+}
+.post h1.title a:hover,
+.post h1.title a:focus {
+  color: inherit;
+}
 .post .meta {
   *zoom: 1;
   color: #999999;
   margin-bottom: 12px;
+  margin-top: -6px;
 }
 .post .meta:before,
 .post .meta:after {
@@ -2296,4 +2304,7 @@ a:focus {
 }
 .post .body {
   margin-bottom: 36px;
+}
+.post + .post {
+  margin-top: 48px;
 }
