@@ -1,6 +1,5 @@
 components*
 assets/styles/main.css
-assets/js/jquery-*.min.js
 .doit.db
 *.py[cod]
 *.swp
@@ -41,4 +40,3 @@ nosetests.xml
 .pydevproject
 lessc
 node_modules/*
-js/jquery-*.min.js
