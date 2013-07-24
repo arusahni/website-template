@@ -19,7 +19,7 @@ def task_styles():
 				for f in os.listdir(directory) 
 				if f.endswith('.less')]
 	return {
-		'actions' : ['./lessc assets/css/less/main.less assets/css/main.css'],
+		'actions' : ['lessc assets/css/less/main.less assets/css/main.css'],
 		'file_dep': check_lessfiles('assets/css/less')
 	}
 
