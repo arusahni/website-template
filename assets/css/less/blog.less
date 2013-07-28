@@ -9,6 +9,24 @@
 
 	.body {
 		margin-bottom: @baseLineHeight * 1.5;
+
+		.figure {
+			.thumbnail;
+
+			& > a,
+			& > a > img {
+				display: block;
+				max-width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.caption {
+				.thumbnail .caption;
+				font-style: italic;
+				padding-bottom: 0; // take away the beefiness.
+			}
+		}
 	}
 
 	&+ .post {
