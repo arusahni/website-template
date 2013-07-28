@@ -2159,7 +2159,13 @@ a:focus {
 .page-content > .content h3,
 .page-content > .content h4,
 .page-content > .content h5,
-.page-content > .content h6 {
+.page-content > .content h6,
+.page-content > .content .h1,
+.page-content > .content .h2,
+.page-content > .content .h3,
+.page-content > .content .h4,
+.page-content > .content .h5,
+.page-content > .content .h6 {
   margin: 12px 0;
   font-family: inherit;
   font-weight: bold;
@@ -2172,25 +2178,37 @@ a:focus {
 .page-content > .content h3 small,
 .page-content > .content h4 small,
 .page-content > .content h5 small,
-.page-content > .content h6 small {
+.page-content > .content h6 small,
+.page-content > .content .h1 small,
+.page-content > .content .h2 small,
+.page-content > .content .h3 small,
+.page-content > .content .h4 small,
+.page-content > .content .h5 small,
+.page-content > .content .h6 small {
   font-weight: normal;
   line-height: 1;
   color: #999999;
 }
 .page-content > .content h1,
-.page-content > .content h2 {
+.page-content > .content .h1,
+.page-content > .content h2,
+.page-content > .content .h2 {
   line-height: 48px;
 }
-.page-content > .content h3 {
+.page-content > .content h3,
+.page-content > .content .h3 {
   line-height: 36px;
 }
-.page-content > .content h1 {
+.page-content > .content h1,
+.page-content > .content .h1 {
   font-size: 41.25px;
 }
-.page-content > .content h2 {
+.page-content > .content h2,
+.page-content > .content .h2 {
   font-size: 33.75px;
 }
-.page-content > .content h3 {
+.page-content > .content h3,
+.page-content > .content .h3 {
   font-size: 26.25px;
 }
 .page-content > .content h4 {
@@ -2208,6 +2226,7 @@ a:focus {
 .page-content > .content h2 small {
   font-size: 18.75px;
 }
+.page-content > .content .h3 small,
 .page-content > .content h3 small {
   font-size: 15px;
 }
@@ -2240,9 +2259,6 @@ blockquote {
 }
 blockquote p {
   margin-bottom: 0;
-  font-size: 18.75px;
-  font-weight: 300;
-  line-height: 1.25;
 }
 blockquote small {
   display: block;
@@ -2326,8 +2342,7 @@ a.thumbnail:focus {
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
 }
-.thumbnail > img,
-.thumbnail > a {
+.thumbnail > img {
   display: block;
   max-width: 100%;
   margin-left: auto;
@@ -2665,6 +2680,15 @@ pre.code {
 .post h1.title a:focus {
   color: inherit;
 }
+.post .backlink {
+  margin-top: 6px;
+}
+.post .backlink a:after {
+  content: ' /';
+}
+.post .backlink + h1.title {
+  margin-top: 0;
+}
 .post .meta {
   *zoom: 1;
   color: #999999;
@@ -2754,6 +2778,7 @@ pre.code {
   padding: 9px;
   color: #555555;
   font-style: italic;
+  padding-bottom: 0;
 }
 .post + .post {
   margin-top: 48px;

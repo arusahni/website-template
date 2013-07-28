@@ -1,6 +1,19 @@
 .post {
+
 	h1.title {
 		.post-title();
+	}
+
+	.backlink {
+		margin-top: @baseLineHeight/4;
+
+		a:after {
+			content: ' /';
+		}
+
+		& + h1.title {
+			margin-top: 0;
+		}
 	}
 
 	.meta {
