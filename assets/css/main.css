@@ -2709,7 +2709,8 @@ pre.code {
   clear: both;
 }
 .post .meta .authordate {
-  display: block;
+  display: inline-block;
+  float: left;
   -webkit-transition: color 0.1s linear;
   -moz-transition: color 0.1s linear;
   -o-transition: color 0.1s linear;
@@ -2723,11 +2724,40 @@ pre.code {
   -webkit-font-smoothing: antialiased;
   *margin-right: .3em;
   content: "\f017";
+  margin-left: 5px;
 }
 .post .meta .authordate:hover {
   color: #333333;
 }
+.post .meta .stats {
+  float: right;
+}
+.post .meta .stats p {
+  margin: 0;
+  padding: 0;
+}
+.post .meta .stats a {
+  color: #999999;
+  -webkit-transition: color 1s linear;
+  -moz-transition: color 1s linear;
+  -o-transition: color 1s linear;
+  transition: color 1s linear;
+}
+.post .meta .stats a:after {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  *margin-right: .3em;
+  content: "\f075";
+  margin-left: 5px;
+}
+.post .meta .stats a:hover {
+  color: #333333;
+}
 .post .meta .tags {
+  clear: both;
   display: block;
   opacity: 0.2;
   filter: alpha(opacity=20);

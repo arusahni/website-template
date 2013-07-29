@@ -1,5 +1,6 @@
 ## -*- coding: utf-8 -*-
 <%namespace name="helper" file="post_helper.tmpl"/>
+<%namespace name="disqus" file="disqus_helper.tmpl"/>
 <%inherit file="base.tmpl"/>
 <%block name="content">
     <div class="post">
@@ -22,5 +23,8 @@
             ${post.text()}
         </div>
         ${helper.html_pager(post)}
+        % if not post.meta('nocomments'):
+            ${disqus.html_disqus(post.permalink(absolute=True), post.title(), '{}_{}'.format(post.formatted_date('%Y%m%d'), post.meta["en"].get("slug")))}
+        % endif
     </div>
 </%block>

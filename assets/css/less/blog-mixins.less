@@ -17,11 +17,14 @@
 	margin-top: @baseLineHeight/4 * -1;
 
 	.authordate {
-		display: block;
+		display: inline-block;
+		.pull-left;
+
 		.transition(color .1s linear);
 
 		&:before {
 			.icon(@time);
+			margin-left: 5px;
 		}
 
 		&:hover {
@@ -29,7 +32,32 @@
 		}
 	}
 
+	.stats {
+		.pull-right;
+		p {
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			color: @grayLight;
+			.transition(color 1s linear);
+
+			&:after {
+				.icon(@comment);
+				margin-left: 5px;
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: @textColor;
+				text-decoration: none;
+			}
+		}
+	}
+
 	.tags {
+		clear: both;
 		display: block;
 		.opacity(@dimmedOpacity);
 		.transition(opacity .1s linear);

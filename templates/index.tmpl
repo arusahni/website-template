@@ -1,5 +1,6 @@
 ## -*- coding: utf-8 -*-
 <%namespace name="helper" file="index_helper.tmpl"/>
+<%namespace name="disqus" file="disqus_helper.tmpl"/>
 <%inherit file="base.tmpl"/>
 <%block name="content">
     % for post in posts:
@@ -8,6 +9,9 @@
             <div class="meta">
                 <div class="authordate">
                     ${post.formatted_date(date_format)}
+                </div>
+                <div class="stats">
+                    ${disqus.html_disqus_link(post.permalink(lang), '{}_{}'.format(post.formatted_date('%Y%m%d'), post.meta["en"].get("slug")))}
                 </div>
                 %if post.tags:
                 <div class="tags">
@@ -25,4 +29,5 @@
         </div>
     % endfor
     ${helper.html_pager()}
+    ${disqus.html_disqus_script()}
 </%block>
