@@ -92,12 +92,14 @@ section {
     }
 
     &>.content {
-        width: @contentWidth;
+        max-width: @contentWidth;
+        @media @tabletLayout {
+            min-width: @narrowContentWidth;
+        }
         @media @mobileLayout {
-            width: auto;
+            min-width: auto;
             padding-left: 4px;
             padding-right: 4px;
-            max-width: @contentWidth;
             margin-right: auto;
             margin-left: auto;
         }

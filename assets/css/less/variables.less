@@ -1,6 +1,7 @@
 // Layout
 //-----------
-@contentWidth: 525px;
+@narrowContentWidth: 525px;
+@contentWidth: 640px;
 @contentPadding: @baseLineHeight * 1.75;
 @contentNarrowPadding: @baseLineHeight;
 
@@ -8,7 +9,9 @@
 @sidebarNarrowPadding: 4px;
 
 @sidebarWidth: 350px;
-@sidebarNarrowWidth: 768px - @contentWidth - @sidebarNarrowPadding - @contentNarrowPadding;
+
+// 913 = min two col width
+@sidebarNarrowWidth: 913px - @contentWidth - @sidebarNarrowPadding - @contentNarrowPadding;
 
 // Colors
 //-----------
@@ -81,9 +84,9 @@
 
 // Responsive
 // ----------
-@desktopLayout: ~"(min-width: 940px)";
-@tabletLayout: ~"(min-width: 768px) and (max-width: 939px)";
-@mobileLayout: ~"(max-width: 767px)";
+@desktopLayout: ~"(min-width: 1045px)";
+@tabletLayout: ~"(min-width: 913px) and (max-width: 1044px)";
+@mobileLayout: ~"(max-width: 912px)";
 
 // Misc
 // -----------
