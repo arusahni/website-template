@@ -7,7 +7,7 @@
     ${helper.html_title()}
         <div class="meta">
             <div class="authordate">
-                ${post.formatted_date(date_format)}
+                <abbr class="timeago" title="${post.date.isoformat()}">${post.formatted_date(date_format)}</abbr>
             </div>
             %if post.tags:
             <div class="tags">
@@ -27,4 +27,11 @@
             ${disqus.html_disqus(post.permalink(absolute=True), post.title(), '{}_{}'.format(post.formatted_date('%Y%m%d'), post.meta["en"].get("slug")))}
         % endif
     </div>
+</%block>
+<%block name="scripts">
+<script type="text/javascript">
+    $(function(){
+        $('.timeago').timeago();    
+    });
+</script>
 </%block>

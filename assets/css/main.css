@@ -2753,8 +2753,11 @@ pre.code {
   content: "\f075";
   margin-left: 5px;
 }
-.post .meta .stats a:hover {
+.post .meta .stats a:hover,
+.post .meta .stats a:focus,
+.post .meta .stats a:active {
   color: #333333;
+  text-decoration: none;
 }
 .post .meta .tags {
   clear: both;
