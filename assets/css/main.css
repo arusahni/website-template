@@ -2803,11 +2803,16 @@ pre.code {
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  display: table;
+  width: 1%;
+  margin: 0 auto 24px;
 }
 .post .body .figure > a,
 .post .body .figure > a > img {
-  display: block;
+  display: cell;
   max-width: 100%;
+  height: auto;
+  overflow: hidden;
   margin-left: auto;
   margin-right: auto;
 }

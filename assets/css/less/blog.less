@@ -25,11 +25,16 @@
 
 		.figure {
 			.thumbnail;
+			display: table;
+			width: 1%;
+			margin: 0 auto @baseLineHeight;
 
 			& > a,
 			& > a > img {
-				display: block;
+				display: cell;
 				max-width: 100%;
+				height: auto;
+				overflow: hidden;
 				margin-left: auto;
 				margin-right: auto;
 			}
