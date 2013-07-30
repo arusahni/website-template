@@ -7,7 +7,7 @@
     ${helper.html_title()}
         <div class="meta">
             <div class="authordate">
-                <abbr class="timeago" title="${post.date.isoformat()}">${post.formatted_date(date_format)}</abbr>
+                <time class="timeago" datetime="${post.date.isoformat()}">${post.formatted_date(date_format)}</time>
             </div>
             %if post.tags:
             <div class="tags">
