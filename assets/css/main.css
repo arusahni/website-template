@@ -2807,9 +2807,14 @@ pre.code {
   width: 1%;
   margin: 0 auto 24px;
 }
+@media (max-width: 773px) {
+  .post .body .figure {
+    display: block;
+    width: 97%;
+  }
+}
 .post .body .figure > a,
 .post .body .figure > a > img {
-  display: cell;
   max-width: 100%;
   height: auto;
   overflow: hidden;

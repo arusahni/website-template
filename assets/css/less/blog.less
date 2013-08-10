@@ -27,11 +27,14 @@
 			.thumbnail;
 			display: table;
 			width: 1%;
+			@media @mobileLayout {
+				display: block;
+				width: 97%;
+			}
 			margin: 0 auto @baseLineHeight;
 
 			& > a,
 			& > a > img {
-				display: cell;
 				max-width: 100%;
 				height: auto;
 				overflow: hidden;
