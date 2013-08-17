@@ -1,9 +1,10 @@
 ## -*- coding: utf-8 -*-
 <%inherit file="base.tmpl"/>
 <%block name="content">
+    <div class="backlink"><a href="${_link('index', 0)}">blog</a></div>
     <div class="postbox">
         <!--Body content-->
-        <h1>${title}</h1>
+        <h1 class="title">${title}</h1>
         <ul class="unstyled">
         % for text, link in items:
             <li><a class="tag" href="${link}"><span class="badge badge-info">${text}</span></a>

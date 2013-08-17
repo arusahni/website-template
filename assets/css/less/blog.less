@@ -1,3 +1,7 @@
+.backlink {
+	.post-breadcrumb();
+}
+
 .post {
 
 	h1.title {
@@ -5,15 +9,7 @@
 	}
 
 	.backlink {
-		margin-top: @baseLineHeight/4;
-
-		a:after {
-			content: ' /';
-		}
-
-		& + h1.title {
-			margin-top: 0;
-		}
+		.post-breadcrumb();
 	}
 
 	.meta {

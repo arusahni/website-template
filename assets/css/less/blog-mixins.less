@@ -77,3 +77,16 @@
 		}
 	}
 }
+
+.post-breadcrumb() {
+	margin-top: @baseLineHeight/4;
+
+	a:after {
+		content: ' /';
+	}
+
+	& + .postbox > h1.title,
+	& + h1.title {
+		margin-top: 0;
+	}
+}

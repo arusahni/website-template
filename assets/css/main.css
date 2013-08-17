@@ -2674,6 +2674,16 @@ pre.code {
   color: #666666;
 }
 /* Literal.Number.Integer.Long */
+.backlink {
+  margin-top: 6px;
+}
+.backlink a:after {
+  content: ' /';
+}
+.backlink + .postbox > h1.title,
+.backlink + h1.title {
+  margin-top: 0;
+}
 .post h1.title {
   margin: 6px 0;
 }
@@ -2690,6 +2700,7 @@ pre.code {
 .post .backlink a:after {
   content: ' /';
 }
+.post .backlink + .postbox > h1.title,
 .post .backlink + h1.title {
   margin-top: 0;
 }
