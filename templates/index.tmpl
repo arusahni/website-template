@@ -3,7 +3,7 @@
 <%namespace name="disqus" file="disqus_helper.tmpl"/>
 <%inherit file="base.tmpl"/>
 <%block name="content">
-    %if kind is not None:
+    %if tag is not UNDEFINED:
         <div class="backlink"><a href="${_link('index', 0)}">blog</a></div>
     %endif
     % for post in posts:
@@ -19,8 +19,8 @@
                 %if post.tags:
                 <div class="tags">
                     <ul>
-                    %for tag in post.tags:
-                        <li><a class="tag" href="${_link('tag', tag)}">${tag}</a></li>
+                    %for t in post.tags:
+                        <li><a class="tag" href="${_link('tag', t)}">${t}</a></li>
                     %endfor
                     </ul>
                 </div>
