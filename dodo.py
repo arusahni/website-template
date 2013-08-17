@@ -3,15 +3,22 @@ from doit.tools import config_changed
 
 DOIT_CONFIG = { 'default_tasks': ['styles'] }
 JQUERY_VERSION = '1.10.2'
+SOURCE_LESS_PATH = 'assets/css/less/main.less'
+TARGET_CSS_PATH = 'assets/css/main.css'
 
 def task__jquery():
 	return {
-		'actions' : ['wget -P assets/js http://code.jquery.com/jquery-%s.min.js' % JQUERY_VERSION],
-		'uptodate' : [config_changed_or_missing(JQUERY_VERSION, 'assets/js/jquery-%s.min.js' % JQUERY_VERSION)]
+		'actions' : [
+            'wget -P assets/js http://code.jquery.com/jquery-{version}.min.js \
+            -O jquery-{version}.min.js'.format(version=JQUERY_VERSION)],
+		'uptodate' : [config_changed_or_missing(JQUERY_VERSION,
+            'assets/js/jquery-{}.min.js'.format(JQUERY_VERSION))]
 	}
+
 
 def task_init():
 	return { 'actions':None, 'task_dep':['_jquery'] }
+
 
 def task_styles():
 	def check_lessfiles(directory):
@@ -19,9 +26,16 @@ def task_styles():
 				for f in os.listdir(directory) 
 				if f.endswith('.less')]
 	return {
-		'actions' : ['lessc assets/css/less/main.less assets/css/main.css'],
+		'actions' : ['lessc {} {}'.format(SOURCE_LESS_PATH, TARGET_CSS_PATH)],
 		'file_dep': check_lessfiles('assets/css/less')
 	}
+
+
+def task_build():
+    return {
+        'actions':['lessc --yui-compress {} {}'.format(SOURCE_LESS_PATH, TARGET_CSS_PATH)],
+        'task_dep':['init']
+    }
 
 
 # uptodate
