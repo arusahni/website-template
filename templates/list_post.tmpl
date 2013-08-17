@@ -1,15 +1,15 @@
 ## -*- coding: utf-8 -*-
 <%inherit file="base.tmpl"/>
 <%block name="content">
-        <!--Body content-->
-        <div class="backlink"><a href="${_link('index', 0)}">blog</a></div>
-        <div class="postbox">
-            <h1 class="title">${title}</h1>
-            <ul class="unstyled">
-            % for post in posts:
-                <li><a href="${post.permalink()}">[${post.formatted_date(date_format)}] ${post.title()}</a>
-            % endfor
-            </ul>
-        </div>
-        <!--End of body content-->
+    <!--Body content-->
+    <div class="backlink"><a href="${_link('index', 0)}">blog</a></div>
+    <div class="postbox">
+        <h1 class="title">${title}</h1>
+        <ul class="unstyled">
+        % for post in posts:
+            <li><a href="${post.permalink()}">[${post.formatted_date(date_format)}] ${post.title()}</a>
+        % endfor
+        </ul>
+    </div>
+    <!--End of body content-->
 </%block>

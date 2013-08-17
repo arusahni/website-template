@@ -2681,6 +2681,7 @@ pre.code {
   content: ' /';
 }
 .backlink + .postbox > h1.title,
+.backlink + .post > h1.title,
 .backlink + h1.title {
   margin-top: 0;
 }
@@ -2701,6 +2702,7 @@ pre.code {
   content: ' /';
 }
 .post .backlink + .postbox > h1.title,
+.post .backlink + .post > h1.title,
 .post .backlink + h1.title {
   margin-top: 0;
 }
