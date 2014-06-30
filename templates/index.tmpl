@@ -14,7 +14,9 @@
                     <time class="timeago" datetime="${post.date.isoformat()}">${post.formatted_date(date_format)}</time>
                 </div>
                 <div class="stats">
-                    ${disqus.html_disqus_link(post.permalink(lang), '{}_{}'.format(post.formatted_date('%Y%m%d'), post.meta["en"].get("slug")))}
+                    % if not post.meta('nocomments'):
+                        ${disqus.html_disqus_link(post.permalink(lang), '{}_{}'.format(post.formatted_date('%Y%m%d'), post.meta["en"].get("slug")))}
+                    % endif
                 </div>
                 %if post.tags:
                 <div class="tags">
