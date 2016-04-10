@@ -5,7 +5,7 @@
     <div class="postbox">
         <h1 class="title">${title}</h1>
         <ul class="unstyled">
-        % for text, link in items:
+        % for text, link, count in items:
             <li><a href="${link}">${text}</a>
         % endfor
         </ul>
