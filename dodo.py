@@ -7,41 +7,39 @@ SOURCE_LESS_PATH = 'assets/css/less/main.less'
 TARGET_CSS_PATH = 'assets/css/main.css'
 
 def task__jquery():
-	return {
-		'actions' : [
-            'wget -P assets/js http://code.jquery.com/jquery-{version}.min.js \
-            -O jquery-{version}.min.js'.format(version=JQUERY_VERSION)],
-		'uptodate' : [config_changed_or_missing(JQUERY_VERSION,
-            'assets/js/jquery-{}.min.js'.format(JQUERY_VERSION))]
-	}
+    return {
+            'actions' : [
+                'wget -P assets/js http://code.jquery.com/jquery-{version}.min.js \
+                        -O jquery-{version}.min.js'.format(version=JQUERY_VERSION)],
+            'uptodate' : [config_changed_or_missing(JQUERY_VERSION,
+                'assets/js/jquery-{}.min.js'.format(JQUERY_VERSION))]
+            }
 
 
-def task_init():
-	return { 'actions':None, 'task_dep':['_jquery'] }
+    def task_init():
+        return { 'actions':None, 'task_dep':['_jquery'] }
 
 
 def task_styles():
-	def check_lessfiles(directory):
-		return [os.path.join(directory,f) 
-				for f in os.listdir(directory) 
-				if f.endswith('.less')]
-	return {
-		'actions' : ['lessc {} {}'.format(SOURCE_LESS_PATH, TARGET_CSS_PATH)],
-		'file_dep': check_lessfiles('assets/css/less')
-	}
+    def check_lessfiles(directory):
+        return [os.path.join(directory,f) for f in os.listdir(directory) if f.endswith('.less')]
+        return {
+                'actions' : ['lessc {} {}'.format(SOURCE_LESS_PATH, TARGET_CSS_PATH)],
+                'file_dep': check_lessfiles('assets/css/less')
+                }
 
 
-def task_build():
-    return {
-        'actions':['lessc --yui-compress {} {}'.format(SOURCE_LESS_PATH, TARGET_CSS_PATH)],
-        'task_dep':['init']
-    }
+        def task_build():
+            return {
+                    'actions':['lessc --yui-compress {} {}'.format(SOURCE_LESS_PATH, TARGET_CSS_PATH)],
+                    'task_dep':['init']
+                    }
 
 
-# uptodate
+            # uptodate
 class config_changed_or_missing(object):
     """check if passed config was modified or the object is missing
-    	stolen and modified from doit source.
+        stolen and modified from doit source.
     @var config (str) or (dict)
     @var check_path (str)
     """
@@ -64,10 +62,10 @@ class config_changed_or_missing(object):
             return hashlib.md5(byte_data).hexdigest()
         else:
             raise Exception(('Invalid type of config_changed parameter got %s' +
-                             ', must be string or dict') % (type(self.config),))
+                ', must be string or dict') % (type(self.config),))
 
-    def configure_task(self, task):
-        task.value_savers.append(lambda: {'_config_changed':self.config_digest})
+            def configure_task(self, task):
+                task.value_savers.append(lambda: {'_config_changed':self.config_digest})
 
     def __call__(self, task, values):
         """return True if confing values are UNCHANGED"""
