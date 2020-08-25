@@ -22,6 +22,18 @@ code {
   white-space: nowrap;
 }
 
+a {
+    code {
+        border: 1px solid @linkColor;
+        color: @linkColor;
+    }
+
+    &:hover code {
+        border-color: @linkColorHover;
+        color: @linkColorHover;
+    }
+}
+
 // Blocks of code
 pre {
   display: block;
