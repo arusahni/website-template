@@ -22,6 +22,7 @@ a {
 		color: @socialLinkColor;
 		line-height: @baseLineHeight * 1.85;
 		.transition(text-shadow 0.5s);
+		.transition(filter 0.5s);
 		.opacity(60);
         @media @mobileLayout {
         	.opacity(90);
@@ -29,6 +30,7 @@ a {
 		&:hover,
 		&:focus {
             text-shadow: 0 0 10px rgba(255,255,255,0.8);
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));
 			color: @socialLinkColor;
 			text-decoration: none;
 			.opacity(90);

@@ -32,19 +32,16 @@ section {
     }
     @media @mobileLayout {
         width: 100%;
+        padding: @baseLineHeight * 2 0;
     }
     //-- end sidebar sizing
-    ul {
+    .bottom-panel {
         position: fixed;
         @media @mobileLayout {
             position: relative;
         }
         margin: 0;
         bottom: 0;
-        display: table;
-        @media @mobileLayout {
-            display: block;
-        }
         width: @sidebarWidth;
         @media @tabletLayout {
             width: @sidebarNarrowWidth;
@@ -52,26 +49,38 @@ section {
         @media @mobileLayout {
             width: inherit;
         }
+        display: flex;
+        flex-direction: column;
+    }
 
-        li {
-            display: table-cell;
-            text-align: center;
+    .social-links,
+    .webrings {
+        display: flex;
+        justify-content: space-evenly;
+
+        @media @mobileLayout {
+            flex-direction: column;
+            padding-left: 25%;
+        }
+
+        .label {
+            display: none;
             @media @mobileLayout {
-                padding-left: 25%;
-                display: block;
-                text-align: left;
+                display: inline;
+                padding-left: 0.5em;
             }
+        }
+    }
 
-            a {
-                display: block;
+    .webrings {
+        svg {
+            height: 3em;
+            width: 3em;
 
-                .label {
-                    display: none;
-                    @media @mobileLayout {
-                        display: inline;
-                        padding-left: 0.5em;
-                    }
-                }
+            @media @mobileLayout {
+                height: 2em;
+                width: 2em;
+                margin-top: -0.5em;
             }
         }
     }
@@ -98,8 +107,8 @@ section {
         }
         @media @mobileLayout {
             min-width: auto;
-            padding-left: 4px;
-            padding-right: 4px;
+            padding-left: 8px;
+            padding-right: 8px;
             margin-right: auto;
             margin-left: auto;
         }
