@@ -21,8 +21,8 @@ a {
 	a {
 		color: @socialLinkColor;
 		line-height: @baseLineHeight * 1.85;
-		.transition(text-shadow 0.5s);
-		.transition(filter 0.5s);
+		transition: text-shadow 0.5s;
+		transition: filter 0.5s;
 		.opacity(60);
         @media @mobileLayout {
         	.opacity(90);
@@ -90,7 +90,7 @@ a {
 
 		p {
 			.hyphens();
-			margin: 0 0 @baseLineHeight / 2;
+			margin: 0 0 (@baseLineHeight / 2);
 		}
 
 		em {
