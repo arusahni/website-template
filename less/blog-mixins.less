@@ -1,3 +1,6 @@
+.pull-right { float: right; }
+.pull-left { float: left; }
+
 .post-title() {
 	margin: (@baseLineHeight / 4) 0;
 	a {
@@ -23,7 +26,7 @@
 		.transition(color .1s linear);
 
 		&:before {
-			.icon(@time);
+            .fa-icon-regular-inline(@fa-var-clock);
 			margin-left: 5px;
 		}
 
@@ -43,7 +46,7 @@
 			.transition(color .1s linear);
 
 			&:after {
-				.icon(@comment);
+				.fa-icon-solid-inline(@fa-var-comment);
 				margin-left: 5px;
 			}
 

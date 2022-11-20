@@ -484,3 +484,15 @@
 .navbarVerticalAlign(@elementHeight) {
   margin-top: ((@navbarHeight - @elementHeight) / 2);
 }
+
+.fa-icon-regular-inline(@fa-var) {
+    .fa-icon;
+    .fa-regular;
+    content: @fa-var;
+}
+
+.fa-icon-solid-inline(@fa-var) {
+    .fa-icon;
+    .fa-solid;
+    content: @fa-var;
+}

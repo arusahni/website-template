@@ -38,11 +38,12 @@ a {
             	.opacity(100);
             }
 		}
-	    [class^="icon-"] {
-	        .transition(opacity 0.5s);
-	        .icon-3x;
+	    i[class^="fa-"] {
+	        transition: opacity 0.5s;
+	        .fa-size(48);
 	        @media @mobileLayout {
-	        	.icon-2x;
+	        	.fa-size(@fa-size-scale-2xl);
+                vertical-align: 0;
 	        }
 	    }
 		.label {

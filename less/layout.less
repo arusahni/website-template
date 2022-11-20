@@ -53,9 +53,10 @@ section {
         flex-direction: column;
     }
 
-    .social-links,
-    .webrings {
+    .social-links {
         display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
         justify-content: space-evenly;
 
         @media @mobileLayout {
@@ -68,19 +69,6 @@ section {
             @media @mobileLayout {
                 display: inline;
                 padding-left: 0.5em;
-            }
-        }
-    }
-
-    .webrings {
-        svg {
-            height: 3em;
-            width: 3em;
-
-            @media @mobileLayout {
-                height: 2em;
-                width: 2em;
-                margin-top: -0.5em;
             }
         }
     }
